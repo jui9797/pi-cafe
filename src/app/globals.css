@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-coffee-primary: #6F4E37;
+  --color-coffee-secondary: #C4A484;
+  --color-coffee-bg: #FFF8F0;
+  --color-coffee-text: #1E1E1E;
+  --color-coffee-accent: #FFB703;
+}
+
+:root {
+  --background: var(--color-coffee-bg);
+  --foreground: var(--color-coffee-text);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #2a1f1a;
+    --foreground: #FFF8F0;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Custom Scrollbar for Menu Tabs */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

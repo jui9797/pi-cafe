@@ -18,6 +18,8 @@ export const metadata = {
   description: "Pi Cafe website",
 };
 
+import { LanguageProvider } from "./context/LanguageContext";
+
 export default function RootLayout({
   children,
 }: {
@@ -28,9 +30,11 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${inter.variable} font-[family-name:var(--font-inter)] antialiased min-h-screen flex flex-col`}
       >
-        <Navbar />
-        <main className="flex-grow">{children}</main>
-        <Footer />
+        <LanguageProvider>
+          <Navbar />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

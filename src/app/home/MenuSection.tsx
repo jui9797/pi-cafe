@@ -1,29 +1,32 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../translations";
 
-// Mock Data based on typical Cafe menus
 const MENU_CATEGORIES = ["Bakery", "Drip coffee", "Hot Drinks", "Cold Drinks", "Sweets", "Sharing Boxes"];
 
 const MENU_ITEMS = [
-  { id: 1, category: "Hot Drinks", name: "Cafe Latte", price: "৳ 150", rating: 4.8, reviews: 124, desc: "Smooth espresso with steamed milk and a light layer of foam.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.03 AM.jpeg" },
-  { id: 2, category: "Hot Drinks", name: "Cappuccino", price: "৳ 180", rating: 4.7, reviews: 98, desc: "Equal parts espresso, steamed milk, and rich milk foam.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.03 AM (1).jpeg" },
-  { id: 3, category: "Hot Drinks", name: "Americano", price: "৳ 120", rating: 4.5, reviews: 210, desc: "Classic espresso diluted with hot water for a rich, robust flavor.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.05 AM.jpeg" },
-  { id: 4, category: "Cold Drinks", name: "Iced Caramel Macchiato", price: "৳ 220", rating: 4.9, reviews: 342, desc: "Espresso combined with vanilla-flavored syrup, milk and caramel drizzle.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.06 AM.jpeg" },
-  { id: 5, category: "Cold Drinks", name: "Cold Brew", price: "৳ 200", rating: 4.8, reviews: 187, desc: "Slow-steeped, small-batch cold coffee for a super smooth taste.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.07 AM.jpeg" },
-  { id: 6, category: "Bakery", name: "Butter Croissant", price: "৳ 130", rating: 4.6, reviews: 156, desc: "Flaky, buttery, and baked fresh daily.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.08 AM.jpeg" },
-  { id: 7, category: "Bakery", name: "Blueberry Muffin", price: "৳ 150", rating: 4.7, reviews: 112, desc: "Soft muffin loaded with wild blueberries and a crumb topping.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.09 AM.jpeg" },
-  { id: 8, category: "Sweets", name: "Chocolate Lava Cake", price: "৳ 250", rating: 4.9, reviews: 430, desc: "Rich chocolate cake with a molten, gooey center.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.10 AM.jpeg" },
-  { id: 9, category: "Sweets", name: "Cheesecake", price: "৳ 220", rating: 4.8, reviews: 275, desc: "Classic New York style cheesecake with a graham cracker crust.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.11 AM.jpeg" },
-  { id: 10, category: "Drip coffee", name: "V60 Pour Over", price: "৳ 250", rating: 4.9, reviews: 120, desc: "Hand-poured filter coffee highlighting subtle tasting notes.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.12 AM.jpeg" },
-  { id: 11, category: "Drip coffee", name: "Chemex", price: "৳ 280", rating: 4.8, reviews: 95, desc: "Smooth and clean cup of coffee made with the Chemex brewer.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.12 AM (1).jpeg" },
-  { id: 12, category: "Sharing Boxes", name: "Pastry Box (6 pcs)", price: "৳ 750", rating: 4.8, reviews: 215, desc: "A selection of our best daily fresh pastries perfect for sharing.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.13 AM.jpeg" },
-  { id: 13, category: "Sharing Boxes", name: "Mini Sandwich Box", price: "৳ 950", rating: 4.7, reviews: 150, desc: "Assortment of mini sandwiches for your gatherings.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.13 AM (1).jpeg" },
+  { id: 1, category: "Hot Drinks", name: "Cafe Latte", price: "$ 4.00", rating: 4.8, reviews: 124, desc: "Smooth espresso with steamed milk and a light layer of foam.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.03 AM.jpeg" },
+  { id: 2, category: "Hot Drinks", name: "Cappuccino", price: "$ 4.00", rating: 4.7, reviews: 98, desc: "Equal parts espresso, steamed milk, and rich milk foam.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.03 AM (1).jpeg" },
+  { id: 3, category: "Hot Drinks", name: "Americano", price: "$ 4.00", rating: 4.5, reviews: 210, desc: "Classic espresso diluted with hot water for a rich, robust flavor.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.05 AM.jpeg" },
+  { id: 4, category: "Cold Drinks", name: "Iced Caramel Macchiato", price: "$ 4.00", rating: 4.9, reviews: 342, desc: "Espresso combined with vanilla-flavored syrup, milk and caramel drizzle.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.06 AM.jpeg" },
+  { id: 5, category: "Cold Drinks", name: "Cold Brew", price: "$ 4.00", rating: 4.8, reviews: 187, desc: "Slow-steeped, small-batch cold coffee for a super smooth taste.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.07 AM.jpeg" },
+  { id: 6, category: "Bakery", name: "Butter Croissant", price: "$ 4.00", rating: 4.6, reviews: 156, desc: "Flaky, buttery, and baked fresh daily.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.08 AM.jpeg" },
+  { id: 7, category: "Bakery", name: "Blueberry Muffin", price: "$ 4.00", rating: 4.7, reviews: 112, desc: "Soft muffin loaded with wild blueberries and a crumb topping.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.09 AM.jpeg" },
+  { id: 8, category: "Sweets", name: "Chocolate Lava Cake", price: "$ 4.00", rating: 4.9, reviews: 430, desc: "Rich chocolate cake with a molten, gooey center.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.10 AM.jpeg" },
+  { id: 9, category: "Sweets", name: "Cheesecake", price: "$ 4.00", rating: 4.8, reviews: 275, desc: "Classic New York style cheesecake with a graham cracker crust.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.11 AM.jpeg" },
+  { id: 10, category: "Drip coffee", name: "V60 Pour Over", price: "$ 4.00", rating: 4.9, reviews: 120, desc: "Hand-poured filter coffee highlighting subtle tasting notes.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.12 AM.jpeg" },
+  { id: 11, category: "Drip coffee", name: "Chemex", price: "$ 4.00", rating: 4.8, reviews: 95, desc: "Smooth and clean cup of coffee made with the Chemex brewer.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.12 AM (1).jpeg" },
+  { id: 12, category: "Sharing Boxes", name: "Pastry Box (6 pcs)", price: "$ 4.00", rating: 4.8, reviews: 215, desc: "A selection of our best daily fresh pastries perfect for sharing.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.13 AM.jpeg" },
+  { id: 13, category: "Sharing Boxes", name: "Mini Sandwich Box", price: "$ 4.00", rating: 4.7, reviews: 150, desc: "Assortment of mini sandwiches for your gatherings.", image: "/assets/WhatsApp Image 2026-05-03 at 11.38.13 AM (1).jpeg" },
 ];
 
 const MenuSection = () => {
   const [activeTab, setActiveTab] = useState("Bakery");
+  const { lang } = useLanguage();
+  const t = translations[lang].menu;
 
   const filteredItems = MENU_ITEMS.filter((item) => item.category === activeTab);
 
@@ -32,7 +35,9 @@ const MenuSection = () => {
       
       {/* Search & Header */}
       <div className="sticky top-0 z-50 text-center mb-6">
-        <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-bold text-coffee-primary">Our Menu</h2>
+        <h2 className="font-[family-name:var(--font-playfair)] text-3xl lg:text-4xl font-bold text-coffee-primary">
+          {t.title}
+        </h2>
       </div>
 
       {/* Sticky Tabs */}
@@ -42,38 +47,44 @@ const MenuSection = () => {
             let icon = null;
             if (cat === "Hot Drinks") {
               icon = (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 shrink-0">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 shrink-0">
                   <path d="M18 8h1a4 4 0 0 1 0 8h-1" /><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" /><line x1="6" y1="1" x2="6" y2="4" /><line x1="10" y1="1" x2="10" y2="4" /><line x1="14" y1="1" x2="14" y2="4" />
                 </svg>
               );
             } else if (cat === "Cold Drinks") {
               icon = (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 shrink-0">
-                  <path d="M10 2v5" /><path d="M14 2v5" /><path d="M4 7h16v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7z" /><path d="M8 2h8" />
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M7 7h10l-1 13H8L7 7z"/>
+                  <path d="M12 2v5"/>
+                  <circle cx="10" cy="13" r="1"/>
+                  <circle cx="14" cy="15" r="1"/>
                 </svg>
               );
             } else if (cat === "Bakery") {
               icon = (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 shrink-0">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 shrink-0">
                   <path d="M6 18V9a6 6 0 0 1 12 0v9" /><path d="M4 18h16a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v0a2 2 0 0 1 2-2z" /><path d="M10 18v-4" /><path d="M14 18v-4" />
                 </svg>
               );
             } else if (cat === "Sweets") {
               icon = (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 shrink-0">
+                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 shrink-0">
                   <path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8" /><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2 1 2 1" /><path d="M2 21h20" /><path d="M12 11v-4" /><path d="M12 3v.01" />
                 </svg>
               );
             } else if (cat === "Drip coffee") {
               icon = (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 shrink-0">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 shrink-0">
                   <polygon points="6 2 18 2 15 11 9 11 6 2" /><path d="M9 11v3a3 3 0 0 0 6 0v-3" /><line x1="12" y1="14" x2="12" y2="22" /><line x1="8" y1="22" x2="16" y2="22" />
                 </svg>
               );
             } else if (cat === "Sharing Boxes") {
               icon = (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 shrink-0">
-                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" /><polyline points="3.27 6.96 12 12.01 20.73 6.96" /><line x1="12" y1="22.08" x2="12" y2="12" />
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 9l4-4h10l4 4"/>
+                <rect x="3" y="9" width="18" height="10" rx="2"/>
+                <path d="M15 3l4 6"/>
+                <path d="M13 3l4 6"/>
                 </svg>
               );
             }
@@ -89,7 +100,7 @@ const MenuSection = () => {
                 }`}
               >
                 {icon}
-                {cat}
+                {t.categories[cat as keyof typeof t.categories]}
               </button>
             );
           })}
@@ -143,7 +154,7 @@ const MenuSection = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 shrink-0">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                   </svg>
-                  Add to Cart
+                  {t.addToCart}
                 </button>
                 <button 
                   className="p-3 bg-gray-100 text-gray-500 rounded-xl hover:bg-red-50 hover:text-red-500 transition-colors shadow-sm"
@@ -163,4 +174,3 @@ const MenuSection = () => {
 };
 
 export default MenuSection;
-

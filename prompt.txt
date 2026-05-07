@@ -1,0 +1,40 @@
+Bellow Find your beans section implement these sections as well as you can. The style must be modern and premium. use nice gradients, glassmorphism, animations, and good hover effects. make it premium. 
+
+1. Recommended / Best Seller Section
+• Top Picks of the Week
+• Most Loved by Customers
+Add:
+• Badge (Trending / Best Seller) 
+
+2. Branch Location Section
+
+informations: 
+cafe name : Pi cafe
+Location:4671 King Salman Bin Abdulaziz Rd, Al Andalus, OAGF7595, 7595, Al-Kharj 16439, Saudi Arabia
+Contact No:+966505196434
+plus code: 584V+5R Al-Kharj Saudi Arabia
+pi cafe google map link: https://maps.app.goo.gl/jeMhKwhfSY9q8pLT8?g_st=aw
+
+Features:
+• Google Map embed
+• Branch list:
+o Address
+o Phone
+o Open hours
+Advanced:
+• Nearest Branch - auto detect
+
+3. About Company Section (you collect company information from google map link)
+
+Brand story Content:
+• Story of coffee shop
+• Mission & Vision
+• Team / Barista intro 
+
+4,  Contact Section
+• Contact form:
+o Name
+o Email
+o Message
+• WhatsApp button
+• Call button

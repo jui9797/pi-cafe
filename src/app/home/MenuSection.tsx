@@ -345,7 +345,7 @@ const MenuSection = () => {
 
       {/* Sticky Tabs */}
       <div className="sticky top-[40px] z-40 bg-coffee-bg p-4  sm:mx-0 sm:px-0 border-2 border-coffee-primary/50 rounded-xl">
-        <div className="flex overflow-x-auto lg:justify-center lg:items-center no-scrollbar gap-3 pb-2 ">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 no-scrollbar gap-3 pb-2">
           {MENU_CATEGORIES.map((cat) => {
             let icon = null;
             if (cat === "Hot Drinks") {
@@ -369,14 +369,14 @@ const MenuSection = () => {
             } else if (cat === "Cold Drinks") {
               icon = (
                 <svg
-                  width="30"
-                  height="30"
+                  
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  className="w-6 h-6 shrink-0"
                 >
                   <path d="M7 7h10l-1 13H8L7 7z" />
                   <path d="M12 2v5" />
@@ -439,14 +439,14 @@ const MenuSection = () => {
             } else if (cat === "Sharing Boxes") {
               icon = (
                 <svg
-                  width="30"
-                  height="30"
+                  
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  className="w-6 h-6 shrink-0"
                 >
                   <path d="M3 9l4-4h10l4 4" />
                   <rect x="3" y="9" width="18" height="10" rx="2" />
@@ -460,7 +460,7 @@ const MenuSection = () => {
               <button
                 key={cat}
                 onClick={() => setActiveTab(cat)}
-                className={`whitespace-nowrap flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                className={`whitespace-nowrap flex justify-center items-center gap-1 lg:gap-2 px-4 py-2 rounded-xl text-[10px] lg:text-sm font-medium transition-all  ${
                   activeTab === cat
                     ? "bg-coffee-primary text-white shadow-md transform scale-105"
                     : "bg-white text-coffee-text border border-coffee-secondary/30 hover:border-coffee-primary"

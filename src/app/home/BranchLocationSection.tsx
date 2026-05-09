@@ -70,7 +70,7 @@ const BranchLocationSection = () => {
           <h2 className="text-3xl lg:text-4xl font-bold text-coffee-primary dark:text-coffee-secondary mb-4">
             {t.title}
           </h2>
-          <p className="text-sm text-coffee-text dark:text-coffee-bg/80">
+          <p className="text-sm text-gray-600 dark:text-coffee-bg/80">
             {t.subtitle}
           </p>
         </motion.div>

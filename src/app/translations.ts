@@ -11,7 +11,7 @@ export const translations = {
         "Welcome to Pi Cafe. Explore our carefully crafted menu and find your perfect cup today.",
     },
     menu: {
-      title: "Our Menu",
+      title: "Our Menu's",
       addToCart: "Add to Cart",
       categories: {
         Bakery: "Bakery",

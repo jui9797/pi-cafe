@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLanguage } from "../context/LanguageContext";
@@ -8,10 +8,21 @@ import { translations } from "../translations";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLangOpen, setIsLangOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
   const { lang, setLang } = useLanguage();
   const t = translations[lang].navbar;
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (isLangOpen && !(event.target as Element).closest(".lang-switcher")) {
+        setIsLangOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isLangOpen]);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -41,8 +52,11 @@ const Navbar = () => {
           </div>
 
           {/* Language Switcher (Always Visible) */}
-          <div className="relative group">
-            <button className="flex items-center gap-1 font-medium text-coffee-primary bg-white/20 px-3 py-1.5 rounded-lg border border-coffee-primary/20 hover:bg-white/30 transition-all">
+          <div className="relative lang-switcher">
+            <button
+              onClick={() => setIsLangOpen(!isLangOpen)}
+              className="flex items-center gap-1 font-medium text-coffee-primary bg-white/20 px-3 py-1.5 rounded-lg border border-coffee-primary/20 hover:bg-white/30 transition-all"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -60,16 +74,38 @@ const Navbar = () => {
               <span className="text-xs sm:text-sm">
                 {lang === "en" ? "EN" : "AR"}
               </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className={`w-3.5 h-3.5 transition-transform duration-200 ${isLangOpen ? "rotate-180" : ""}`}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
             </button>
-            <div className="absolute top-full right-0  hidden group-hover:block bg-white shadow-xl border border-gray-100 rounded-xl overflow-hidden z-50 min-w-[120px] animate-in fade-in slide-in-from-top-1">
+            <div
+              className={`absolute top-full right-0 mt-2 ${isLangOpen ? "block" : "hidden"} bg-white shadow-xl border border-gray-100 rounded-xl overflow-hidden z-50 min-w-[120px] animate-in fade-in slide-in-from-top-1`}
+            >
               <button
-                onClick={() => setLang("en")}
+                onClick={() => {
+                  setLang("en");
+                  setIsLangOpen(false);
+                }}
                 className={`w-full px-4 py-2 text-left text-sm hover:bg-coffee-bg transition-colors ${lang === "en" ? "font-bold text-coffee-primary" : "text-gray-600"}`}
               >
                 English
               </button>
               <button
-                onClick={() => setLang("ar")}
+                onClick={() => {
+                  setLang("ar");
+                  setIsLangOpen(false);
+                }}
                 className={`w-full px-4 py-2 text-left text-sm hover:bg-coffee-bg transition-colors ${lang === "ar" ? "font-bold text-coffee-primary" : "text-gray-600"}`}
               >
                 العربية

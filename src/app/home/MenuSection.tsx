@@ -336,16 +336,17 @@ const MenuSection = () => {
 
   return (
     <section className="py-8 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 min-h-[500px]">
-      {/* Search & Header */}
-      <div className="sticky top-0 z-50 text-center mb-6">
-        <h2 className="font-[family-name:var(--font-playfair)] text-3xl lg:text-4xl font-bold text-coffee-primary ">
+      {/* Header */}
+      <div className="text-center mb-10">
+        <h2 className="font-[family-name:var(--font-playfair)] text-4xl lg:text-5xl font-extrabold text-coffee-primary">
           {t.title}
         </h2>
+        <div className="w-20 h-1 bg-coffee-primary/20 mx-auto mt-4 rounded-full"></div>
       </div>
 
       {/* Sticky Tabs */}
-      <div className="sticky top-[40px] z-40 bg-coffee-bg p-4  sm:mx-0 sm:px-0 border-2 border-coffee-primary/50 rounded-xl">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 no-scrollbar gap-3 pb-2">
+      <div className="sticky top-4 z-40 bg-coffee-bg/95 backdrop-blur-md p-2.5 sm:p-4 border border-coffee-primary/10 rounded-2xl shadow-[0_4px_20px_rgba(111,78,55,0.08)]">
+        <div className="grid grid-cols-2 min-[400px]:grid-cols-3 lg:grid-cols-6 gap-2.5">
           {MENU_CATEGORIES.map((cat) => {
             let icon = null;
             if (cat === "Hot Drinks") {
@@ -357,7 +358,7 @@ const MenuSection = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="w-6 h-6 shrink-0"
+                  className="w-full h-full"
                 >
                   <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
                   <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
@@ -376,7 +377,7 @@ const MenuSection = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="w-6 h-6 shrink-0"
+                  className="w-full h-full"
                 >
                   <path d="M7 7h10l-1 13H8L7 7z" />
                   <path d="M12 2v5" />
@@ -393,7 +394,7 @@ const MenuSection = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="w-6 h-6 shrink-0"
+                  className="w-full h-full"
                 >
                   <path d="M6 18V9a6 6 0 0 1 12 0v9" />
                   <path d="M4 18h16a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v0a2 2 0 0 1 2-2z" />
@@ -410,7 +411,7 @@ const MenuSection = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="w-6 h-6 shrink-0"
+                  className="w-full h-full"
                 >
                   <path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8" />
                   <path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2 1 2 1" />
@@ -428,7 +429,7 @@ const MenuSection = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="w-6 h-6 shrink-0"
+                  className="w-full h-full"
                 >
                   <polygon points="6 2 18 2 15 11 9 11 6 2" />
                   <path d="M9 11v3a3 3 0 0 0 6 0v-3" />
@@ -446,7 +447,7 @@ const MenuSection = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="w-6 h-6 shrink-0"
+                  className="w-full h-full"
                 >
                   <path d="M3 9l4-4h10l4 4" />
                   <rect x="3" y="9" width="18" height="10" rx="2" />
@@ -460,14 +461,18 @@ const MenuSection = () => {
               <button
                 key={cat}
                 onClick={() => setActiveTab(cat)}
-                className={`whitespace-nowrap flex justify-center items-center gap-1 lg:gap-2 px-4 py-2 rounded-xl text-[10px] lg:text-sm font-medium transition-all  ${
+                className={`flex justify-center items-center gap-1.5 lg:gap-2 px-2 py-2.5 rounded-xl text-[9px] min-[380px]:text-[10px] sm:text-xs lg:text-sm font-bold transition-all duration-300 ${
                   activeTab === cat
-                    ? "bg-coffee-primary text-white shadow-md transform scale-105"
-                    : "bg-white text-coffee-text border border-coffee-secondary/30 hover:border-coffee-primary"
+                    ? "bg-coffee-primary text-white shadow-lg transform scale-[1.02]"
+                    : "bg-white text-coffee-primary border border-coffee-primary/10 hover:border-coffee-primary/40 shadow-sm"
                 }`}
               >
-                {icon}
-                {t.categories[cat as keyof typeof t.categories]}
+                <span className="w-4 h-4 lg:w-5 lg:h-5 flex items-center justify-center shrink-0">
+                  {icon}
+                </span>
+                <span className="truncate">
+                  {t.categories[cat as keyof typeof t.categories]}
+                </span>
               </button>
             );
           })}

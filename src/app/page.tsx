@@ -13,11 +13,12 @@ export default function Home() {
     <div className="flex flex-col  w-full overflow-x-hidden">
       <Hero />
       <MenuSection />
+      <BranchLocationSection />
       <ReviewsSection />
       <CoffeeBeansSection />
       <BestSellerSection />
       <AboutSection />
-      <BranchLocationSection />
+      
       <ContactSection />
     </div>
   );

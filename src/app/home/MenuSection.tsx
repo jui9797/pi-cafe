@@ -19,7 +19,7 @@ const MENU_ITEMS = [
     id: 1,
     category: "Hot Drinks",
     name: "Cappuccino Latte",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.8,
     reviews: 124,
     desc: "Smooth espresso with steamed milk and a light layer of foam.",
@@ -29,7 +29,7 @@ const MENU_ITEMS = [
     id: 2,
     category: "Hot Drinks",
     name: "Espresso",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.7,
     reviews: 98,
     desc: "Equal parts espresso, steamed milk, and rich milk foam.",
@@ -39,7 +39,7 @@ const MENU_ITEMS = [
     id: 3,
     category: "Hot Drinks",
     name: "Today s coffee HOT",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.5,
     reviews: 210,
     desc: "Classic espresso diluted with hot water for a rich, robust flavor.",
@@ -49,7 +49,7 @@ const MENU_ITEMS = [
     id: 4,
     category: "Hot Drinks",
     name: "Flat white-cortado",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.5,
     reviews: 210,
     desc: "Classic espresso diluted with hot water for a rich, robust flavor.",
@@ -59,7 +59,7 @@ const MENU_ITEMS = [
     id: 5,
     category: "Hot Drinks",
     name: "French vanilla",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.5,
     reviews: 210,
     desc: "Classic espresso diluted with hot water for a rich, robust flavor.",
@@ -70,7 +70,7 @@ const MENU_ITEMS = [
     id: 6,
     category: "Cold Drinks",
     name: "Ice Latte",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.9,
     reviews: 342,
     desc: "Espresso combined with vanilla-flavored syrup, milk and caramel drizzle.",
@@ -80,7 +80,7 @@ const MENU_ITEMS = [
     id: 7,
     category: "Cold Drinks",
     name: "Ice Matcha",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.8,
     reviews: 187,
     desc: "Slow-steeped, small-batch cold coffee for a super smooth taste.",
@@ -90,7 +90,7 @@ const MENU_ITEMS = [
     id: 8,
     category: "Cold Drinks",
     name: "Ice Spanish Latte",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.8,
     reviews: 187,
     desc: "Slow-steeped, small-batch cold coffee for a super smooth taste.",
@@ -100,7 +100,7 @@ const MENU_ITEMS = [
     id: 9,
     category: "Cold Drinks",
     name: "Ice White Mocha",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.8,
     reviews: 187,
     desc: "Slow-steeped, small-batch cold coffee for a super smooth taste.",
@@ -110,7 +110,7 @@ const MENU_ITEMS = [
     id: 10,
     category: "Cold Drinks",
     name: "Iced Americano",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.8,
     reviews: 187,
     desc: "Slow-steeped, small-batch cold coffee for a super smooth taste.",
@@ -121,7 +121,7 @@ const MENU_ITEMS = [
     id: 11,
     category: "Bakery",
     name: "Brownies",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.6,
     reviews: 156,
     desc: "Flaky, buttery, and baked fresh daily.",
@@ -131,7 +131,7 @@ const MENU_ITEMS = [
     id: 12,
     category: "Bakery",
     name: "Cake Volcano",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.6,
     reviews: 156,
     desc: "Flaky, buttery, and baked fresh daily.",
@@ -141,7 +141,7 @@ const MENU_ITEMS = [
     id: 13,
     category: "Bakery",
     name: "Crunchy cheese cake",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.6,
     reviews: 156,
     desc: "Flaky, buttery, and baked fresh daily.",
@@ -151,7 +151,7 @@ const MENU_ITEMS = [
     id: 14,
     category: "Bakery",
     name: "Date cake",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.6,
     reviews: 156,
     desc: "Flaky, buttery, and baked fresh daily.",
@@ -161,7 +161,7 @@ const MENU_ITEMS = [
     id: 15,
     category: "Bakery",
     name: "Feta cheese",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.7,
     reviews: 112,
     desc: "Soft muffin loaded with wild blueberries and a crumb topping.",
@@ -172,7 +172,7 @@ const MENU_ITEMS = [
     id: 16,
     category: "Sweets",
     name: "Brownes",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.9,
     reviews: 430,
     desc: "Rich chocolate cake with a molten, gooey center.",
@@ -182,7 +182,7 @@ const MENU_ITEMS = [
     id: 17,
     category: "Sweets",
     name: "Cookies",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.8,
     reviews: 275,
     desc: "Classic New York style cheesecake with a graham cracker crust.",
@@ -192,7 +192,7 @@ const MENU_ITEMS = [
     id: 18,
     category: "Sweets",
     name: "Crunchy Cheese cake",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.8,
     reviews: 275,
     desc: "Classic New York style cheesecake with a graham cracker crust.",
@@ -202,7 +202,7 @@ const MENU_ITEMS = [
     id: 19,
     category: "Sweets",
     name: "Pecan bites",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.8,
     reviews: 275,
     desc: "Classic New York style cheesecake with a graham cracker crust.",
@@ -212,7 +212,7 @@ const MENU_ITEMS = [
     id: 20,
     category: "Sweets",
     name: "Raffel bites",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.8,
     reviews: 275,
     desc: "Classic New York style cheesecake with a graham cracker crust.",
@@ -222,7 +222,7 @@ const MENU_ITEMS = [
     id: 21,
     category: "Drip coffee",
     name: "V60 Pour Over",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.9,
     reviews: 120,
     desc: "Hand-poured filter coffee highlighting subtle tasting notes.",
@@ -232,7 +232,7 @@ const MENU_ITEMS = [
     id: 22,
     category: "Drip coffee",
     name: "Chemex",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.8,
     reviews: 95,
     desc: "Smooth and clean cup of coffee made with the Chemex brewer.",
@@ -242,7 +242,7 @@ const MENU_ITEMS = [
     id: 23,
     category: "Drip coffee",
     name: "Chemex",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.8,
     reviews: 95,
     desc: "Smooth and clean cup of coffee made with the Chemex brewer.",
@@ -252,7 +252,7 @@ const MENU_ITEMS = [
     id: 24,
     category: "Drip coffee",
     name: "Chemex",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.8,
     reviews: 95,
     desc: "Smooth and clean cup of coffee made with the Chemex brewer.",
@@ -262,7 +262,7 @@ const MENU_ITEMS = [
     id: 25,
     category: "Drip coffee",
     name: "Chemex",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.8,
     reviews: 95,
     desc: "Smooth and clean cup of coffee made with the Chemex brewer.",
@@ -272,7 +272,7 @@ const MENU_ITEMS = [
     id: 26,
     category: "Sharing Boxes",
     name: "Pastry Box (6 pcs)",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.8,
     reviews: 215,
     desc: "A selection of our best daily fresh pastries perfect for sharing.",
@@ -283,7 +283,7 @@ const MENU_ITEMS = [
     id: 27,
     category: "Sharing Boxes",
     name: "Mini Sandwich Box",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.7,
     reviews: 150,
     desc: "Assortment of mini sandwiches for your gatherings.",
@@ -294,7 +294,7 @@ const MENU_ITEMS = [
     id: 28,
     category: "Sharing Boxes",
     name: "Mini Sandwich Box",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.7,
     reviews: 150,
     desc: "Assortment of mini sandwiches for your gatherings.",
@@ -305,7 +305,7 @@ const MENU_ITEMS = [
     id: 29,
     category: "Sharing Boxes",
     name: "Mini Sandwich Box",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.7,
     reviews: 150,
     desc: "Assortment of mini sandwiches for your gatherings.",
@@ -316,7 +316,7 @@ const MENU_ITEMS = [
     id: 30,
     category: "Sharing Boxes",
     name: "Mini Sandwich Box",
-    price: "$ 4.00",
+    price: "4 SAR",
     rating: 4.7,
     reviews: 150,
     desc: "Assortment of mini sandwiches for your gatherings.",
@@ -370,7 +370,6 @@ const MenuSection = () => {
             } else if (cat === "Cold Drinks") {
               icon = (
                 <svg
-                  
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -440,7 +439,6 @@ const MenuSection = () => {
             } else if (cat === "Sharing Boxes") {
               icon = (
                 <svg
-                  
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -480,87 +478,72 @@ const MenuSection = () => {
       </div>
 
       {/* Menu Grid */}
-      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="w-full mt-10 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-8">
         {filteredItems.map((item) => (
           <div
             key={item.id}
-            className="group relative bg-white/80 backdrop-blur-lg rounded-xl p-4 shadow-[0_8px_30px_rgb(111,78,55,0.12)] hover:shadow-[0_8px_30px_rgb(111,78,55,0.25)] border border-white/50 hover:border-coffee-secondary/30 transition-all duration-500 flex flex-col hover:-translate-y-2"
+            className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 p-1 lg:p-3"
           >
-            {/* Image Container */}
-            <div className="relative w-full h-56 rounded-xl overflow-hidden mb-5">
+            {/* Image */}
+            <div className="relative w-full h-36 md:h-52 lg:h-72 overflow-hidden p-2 rounded-lg">
               <Image
                 src={item.image}
                 alt={item.name}
                 fill
-                className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                className="object-cover group-hover:scale-110 transition-transform duration-700 rounded-lg"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-all duration-500"></div>
             </div>
 
-            {/* Content Container */}
-            <div className="flex flex-col flex-grow px-2">
-              <div className="flex justify-between items-start mb-2 gap-2">
-                <h3 className="font-[family-name:var(--font-playfair)] text-xl font-bold text-coffee-primary leading-tight">
-                  {item.name}
-                </h3>
-                <span className="text-coffee-primary font-bold text-lg whitespace-nowrap bg-coffee-bg px-3 py-1 rounded-full shadow-sm">
+            {/* Content */}
+            <div className="relative  h-36 lg:h-[188px]">
+              {/* Title */}
+              <h3 className="font-[family-name:var(--font-playfair)] text-[15px] lg:text-2xl font-bold text-coffee-primary mb-1 lg:mb-3">
+                {item.name}
+              </h3>
+
+              {/* Rating + Price */}
+              <div className="flex items-center justify-between mb-2 lg:mb-5">
+                <div className="flex items-center gap-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="w-4 h-4 text-yellow-500"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+
+                  <span className="text-sm font-semibold text-gray-700">
+                    {item.rating}
+                  </span>
+                </div>
+
+                <span className="text-coffee-primary font-bold text-sm lg:text-lg bg-coffee-bg px-3 py-1 rounded-full">
                   {item.price}
                 </span>
               </div>
 
-              <div className="flex items-center gap-1.5 mb-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="w-4 h-4 text-yellow-500 shrink-0"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span className="text-sm font-semibold text-gray-700">
-                  {item.rating}
-                </span>
-                <span className="text-xs text-gray-400">({item.reviews})</span>
-              </div>
-
-              <p className="text-sm text-gray-500 leading-relaxed mb-6 flex-grow line-clamp-2">
-                {item.desc}
-              </p>
-
-              {/* Action Buttons */}
-              <div className="flex items-center justify-between gap-3 mt-auto">
-                <button className="flex-grow py-3 bg-coffee-primary text-white font-medium rounded-xl hover:bg-[#4A3425] transition-colors flex justify-center items-center gap-2 shadow-md hover:shadow-lg">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={2}
-                    stroke="currentColor"
-                    className="w-5 h-5 shrink-0"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 4.5v15m7.5-7.5h-15"
-                    />
-                  </svg>
-                  {t.addToCart}
+              {/* Buttons */}
+              <div className="w-full flex items-center gap-3  absolute bottom-1">
+                <button className="flex-1 py-2 lg:py-3 rounded-lg bg-coffee-primary text-white text-[10px] lg:text-[16px] font-medium hover:bg-[#4a3425] transition-all duration-300 shadow-md">
+                  View Details
                 </button>
-                <button
-                  className="p-3 bg-gray-100 text-gray-500 rounded-xl hover:bg-red-50 hover:text-red-500 transition-colors shadow-sm"
-                  title="Add to Favorites"
-                >
+
+                <button className="w-11 h-11 flex items-center justify-center rounded-lg bg-gray-100 hover:bg-red-50 hover:text-red-500 transition-all duration-300">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth={2}
                     stroke="currentColor"
-                    className="w-6 h-6 shrink-0"
+                    className="w-5 h-5"
                   >
                     <path
                       strokeLinecap="round"

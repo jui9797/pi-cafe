@@ -55,7 +55,7 @@ const Navbar = () => {
           <div className="relative lang-switcher">
             <button
               onClick={() => setIsLangOpen(!isLangOpen)}
-              className="flex items-center gap-1 font-medium text-coffee-primary bg-white/20 px-3 py-1.5 rounded-lg border border-coffee-primary/20 hover:bg-white/30 transition-all"
+              className="flex items-center gap-1 font-medium text-coffee-primary bg-white/20 px-3 py-1.5 rounded-lg border border-coffee-primary/80 hover:bg-white transition-all"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

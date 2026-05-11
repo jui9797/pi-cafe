@@ -191,14 +191,14 @@ export default function CoffeeBeansSection() {
               className="bg-[#FFF8F0] dark:bg-[#2a1f1a] rounded-xl p-4 shadow-xl border border-[#C4A484]/30 flex flex-col transition-transform duration-300 hover:-translate-y-2 group"
             >
               {/* Image */}
-              <div className="w-full h-40 mb-4 overflow-hidden rounded-xl bg-[#6F4E37]/5 flex items-center justify-center relative">
+              {/* <div className="w-full h-40 mb-4 overflow-hidden rounded-xl bg-[#6F4E37]/5 flex items-center justify-center relative">
                 <Image
                   src={bean.image}
                   alt={bean.name}
                   fill
                   className="object-contain p-4 group-hover:scale-110 transition-transform duration-500 drop-shadow-lg"
                 />
-              </div>
+              </div> */}
 
               {/* Title */}
               <div className="flex justify-between items-start mb-2">
@@ -262,14 +262,14 @@ export default function CoffeeBeansSection() {
           {!showAll ? (
             <button
               onClick={() => setShowAll(true)}
-              className="px-8 py-3 bg-[#FFF8F0] text-[#6F4E37] font-semibold rounded-full hover:bg-[#C4A484] hover:text-white transition-all duration-300 shadow-lg"
+              className="px-8 py-3 bg-[#FFF8F0] text-[#6F4E37] font-semibold rounded-xl hover:bg-[#C4A484] hover:text-white transition-all duration-300 shadow-lg"
             >
               {t.exploreMore}
             </button>
           ) : (
             <button
               onClick={() => setShowAll(false)}
-              className="px-8 py-3 bg-[#FFF8F0] text-[#6F4E37] font-semibold rounded-full hover:bg-[#C4A484] hover:text-white transition-all duration-300 shadow-lg"
+              className="px-8 py-3 bg-[#FFF8F0] text-[#6F4E37] font-semibold rounded-xl hover:bg-[#C4A484] hover:text-white transition-all duration-300 shadow-lg"
             >
               {t.exploreLess}
             </button>

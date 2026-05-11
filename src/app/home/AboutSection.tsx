@@ -22,12 +22,15 @@ const AboutSection = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative h-[350px] lg:h-[400px] w-full rounded-xl overflow-hidden shadow-2xl z-10 ">
+            <div className="relative h-[350px] lg:h-[400px]  rounded-xl overflow-hidden">
               <Image
-                src="/images/new-sections/cafe_interior.png"
+                src="/assets/piCafe.png"
                 alt="Pi Cafe Interior"
                 fill
-                className="object-cover"
+                quality={100}
+                priority
+                sizes="100vw, 50vw"
+                className="object-contain object-center transition-transform duration-700 hover:scale-105 rounded-xl"
               />
             </div>
             <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-coffee-accent/20 rounded-full blur-3xl z-0 " />

@@ -41,16 +41,6 @@ const Navbar = () => {
 
         {/* Desktop Menu & Right Actions */}
         <div className="flex items-center gap-4 lg:gap-6">
-          {/* Desktop Nav Links */}
-          <div className="hidden md:flex gap-6">
-            <Link
-              href="/demo2"
-              className="text-sm font-medium text-coffee-primary hover:text-coffee-accent transition-colors"
-            >
-              {t.demo2}
-            </Link>
-          </div>
-
           {/* Language Switcher (Always Visible) */}
           <div className="relative lang-switcher">
             <button
@@ -114,12 +104,12 @@ const Navbar = () => {
           </div>
 
           {/* Desktop CTA Button */}
-          <button className="hidden md:block bg-coffee-primary text-white px-5 py-2 rounded-xl font-medium text-sm hover:bg-coffee-primary/90 transition-all shadow-sm hover:shadow-md">
+          {/* <button className="hidden md:block bg-coffee-primary text-white px-5 py-2 rounded-xl font-medium text-sm hover:bg-coffee-primary/90 transition-all shadow-sm hover:shadow-md">
             {t.orderNow}
-          </button>
+          </button> */}
 
           {/* Mobile Hamburger Icon */}
-          <button
+          {/* <button
             onClick={toggleMenu}
             className="md:hidden p-2 text-coffee-primary hover:bg-coffee-primary/10 rounded-lg transition-colors"
             aria-label="Toggle Menu"
@@ -155,36 +145,14 @@ const Navbar = () => {
                 />
               </svg>
             )}
-          </button>
+          </button> */}
         </div>
       </div>
 
       {/* Mobile Menu Dropdown */}
-      <div
+      {/* <div
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"}`}
-      >
-        <div className="px-4 pt-2 pb-6 space-y-4 bg-coffee-bg/95 backdrop-blur-md border-t border-coffee-secondary/10">
-          <Link
-            href="/demo2"
-            onClick={() => setIsMenuOpen(false)}
-            className="block px-3 py-2 rounded-lg text-base font-medium text-coffee-primary hover:bg-coffee-primary/10 transition-colors"
-          >
-            {t.demo2}
-          </Link>
-          <Link
-            href="/demo2"
-            onClick={() => setIsMenuOpen(false)}
-            className="block px-3 py-2 rounded-lg text-base font-medium text-coffee-primary hover:bg-coffee-primary/10 transition-colors"
-          >
-            {t.demo3}
-          </Link>
-          <div className="pt-2">
-            <button className="w-full bg-coffee-primary text-white px-4 py-3 rounded-xl font-bold text-base hover:bg-coffee-primary/90 transition-all shadow-md">
-              {t.orderNow}
-            </button>
-          </div>
-        </div>
-      </div>
+      ></div> */}
     </nav>
   );
 };

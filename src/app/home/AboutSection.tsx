@@ -27,7 +27,6 @@ const AboutSection = () => {
                 src="/assets/piCafe.png"
                 alt="Pi Cafe Interior"
                 fill
-                quality={100}
                 priority
                 sizes="100vw, 50vw"
                 className="object-contain object-center transition-transform duration-700 hover:scale-105 rounded-xl"

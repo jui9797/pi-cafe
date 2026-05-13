@@ -12,7 +12,7 @@ export default function Hero() {
         <div
           className="absolute inset-0 z-0 bg-cover bg-right lg:bg-center animate-zoom"
           style={{
-            backgroundImage: "url('/assets/cold drinks/Iced Americano.jpeg')",
+            backgroundImage: "url('/assets/banner-img.jpeg')",
           }}
         ></div>
 

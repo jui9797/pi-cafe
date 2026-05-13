@@ -13,6 +13,7 @@ export const translations = {
     menu: {
       title: "Our Menu's",
       addToCart: "Add to Cart",
+      viewDetails: "View Details",
       categories: {
         Bakery: "Bakery",
         "Drip coffee": "Drip Coffee",
@@ -120,6 +121,7 @@ export const translations = {
     menu: {
       title: "قائمتنا",
       addToCart: "أضف إلى السلة",
+      viewDetails: "عرض التفاصيل",
       categories: {
         Bakery: "مخبوزات",
         "Drip coffee": "قهوة مقطرة",

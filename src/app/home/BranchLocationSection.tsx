@@ -2,61 +2,17 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Clock, Navigation } from "lucide-react";
+import { MapPin, Phone, Clock } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../translations";
 
 const BranchLocationSection = () => {
   const { lang } = useLanguage();
   const t = translations[lang].branch;
-  const [isLocating, setIsLocating] = useState(false);
-  const [distance, setDistance] = useState<string | null>(null);
+  const [selectedBranchId, setSelectedBranchId] = useState(t.branches[0].id);
 
-  const branchCoords = { lat: 24.1507, lng: 47.3345 };
+  const selectedBranch = t.branches.find((b: any) => b.id === selectedBranchId) || t.branches[0];
 
-  const calculateDistance = (
-    lat1: number,
-    lon1: number,
-    lat2: number,
-    lon2: number,
-  ) => {
-    const R = 6371; // km
-    const dLat = (lat2 - lat1) * (Math.PI / 180);
-    const dLon = (lon2 - lon1) * (Math.PI / 180);
-    const a =
-      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos(lat1 * (Math.PI / 180)) *
-        Math.cos(lat2 * (Math.PI / 180)) *
-        Math.sin(dLon / 2) *
-        Math.sin(dLon / 2);
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return R * c;
-  };
-
-  const handleFindNearest = () => {
-    setIsLocating(true);
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const dist = calculateDistance(
-            position.coords.latitude,
-            position.coords.longitude,
-            branchCoords.lat,
-            branchCoords.lng,
-          );
-          setDistance(dist.toFixed(1) + " km");
-          setIsLocating(false);
-        },
-        () => {
-          setIsLocating(false);
-          alert("Could not get your location.");
-        },
-      );
-    } else {
-      setIsLocating(false);
-      alert("Geolocation is not supported by your browser.");
-    }
-  };
 
   return (
     <section className="py-16 w-full px-3 md:px-6 bg-white dark:bg-[#1a1412]">
@@ -65,7 +21,7 @@ const BranchLocationSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-8"
+          className="text-center mb-12"
         >
           <h2 className="text-3xl lg:text-4xl font-bold text-coffee-primary dark:text-coffee-secondary mb-4">
             {t.title}
@@ -75,30 +31,46 @@ const BranchLocationSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        {/* Branch Selection Grid */}
+        <div className="grid grid-cols-2 lg:flex lg:justify-center flex-wrap pb-8 mb-8 gap-3 md:gap-6">
+          {t.branches.map((branch: any) => (
+            <button
+              key={branch.id}
+              onClick={() => setSelectedBranchId(branch.id)}
+              className={`text-sm md:text-base px-4 md:px-10 py-3 md:py-4 rounded-2xl md:rounded-full font-bold transition-all duration-300 ${
+                selectedBranchId === branch.id
+                  ? "bg-coffee-primary text-white shadow-xl scale-[1.02] ring-2 ring-coffee-primary/20"
+                  : "bg-coffee-bg dark:bg-white/5 text-coffee-primary dark:text-coffee-secondary border border-coffee-primary/10 hover:bg-coffee-primary/10 hover:border-coffee-primary/30"
+              }`}
+            >
+              {branch.name}
+            </button>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           <motion.div
+            key={`info-${selectedBranchId}`}
             initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, x: 0 }}
             className="space-y-8"
           >
-            <div className="bg-coffee-bg dark:bg-black/40 p-4 rounded-xl border border-coffee-secondary/20 shadow-xl ">
-              <h3 className="text-xl font-bold text-coffee-primary dark:text-coffee-secondary mb-4 flex items-center gap-2">
-                <MapPin className="text-coffee-accent" /> {t.locationName}
+            <div className="bg-coffee-bg dark:bg-black/40 p-6 rounded-2xl border border-coffee-secondary/20 shadow-xl ">
+              <h3 className="text-2xl font-bold text-coffee-primary dark:text-coffee-secondary mb-6 flex items-center gap-2">
+                <MapPin className="text-coffee-accent" /> {selectedBranch.name}
               </h3>
 
-              <div className="space-y-4 text-coffee-text dark:text-coffee-bg/90">
+              <div className="space-y-6 text-coffee-text dark:text-coffee-bg/90">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white dark:bg-white/10 rounded-xl shadow-md">
                     <MapPin className="text-coffee-primary dark:text-coffee-secondary" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600 font-bold">
+                    <p className="text-sm text-gray-500 font-bold mb-1">
                       {t.address}
                     </p>
-                    <p className="text-xs text-gray-600 ">
-                      4671 King Salman Bin Abdulaziz Rd, Al Andalus, Al-Kharj
-                      16439, Saudi Arabia
+                    <p className="text-sm text-coffee-primary dark:text-white/80 leading-relaxed">
+                      {selectedBranch.address}
                     </p>
                   </div>
                 </div>
@@ -108,8 +80,10 @@ const BranchLocationSection = () => {
                     <Phone className="text-coffee-primary dark:text-coffee-secondary" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600 font-bold">{t.phone}</p>
-                    <p className="text-xs text-gray-600">+966 50 519 6434</p>
+                    <p className="text-sm text-gray-500 font-bold mb-1">{t.phone}</p>
+                    <p className="text-sm text-coffee-primary dark:text-white/80">
+                      {selectedBranch.phone}
+                    </p>
                   </div>
                 </div>
 
@@ -118,39 +92,27 @@ const BranchLocationSection = () => {
                     <Clock className="text-coffee-primary dark:text-coffee-secondary" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600 font-bold">
+                    <p className="text-sm text-gray-500 font-bold mb-1">
                       {t.openingHours}
                     </p>
-                    <p className="text-xs text-gray-600">
-                      {t.allDay} (6:00 AM - 1:00 AM)
+                    <p className="text-sm text-green-600 dark:text-green/80">
+                      {selectedBranch.openingHours}
                     </p>
                   </div>
                 </div>
               </div>
 
-              <button
-                onClick={handleFindNearest}
-                disabled={isLocating}
-                className="mt-4 w-full py-3 bg-coffee-accent hover:bg-coffee-accent/90 text-coffee-text font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-50"
-              >
-                <Navigation className={isLocating ? "animate-spin" : ""} />
-                {isLocating
-                  ? "Locating..."
-                  : distance
-                    ? `${t.findNearest}: ${distance}`
-                    : t.findNearest}
-              </button>
             </div>
           </motion.div>
 
           <motion.div
+            key={`map-${selectedBranchId}`}
             initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="h-[300px] md:h-[400px]  rounded-xl overflow-hidden shadow-xl border-4 border-white dark:border-white/10"
+            animate={{ opacity: 1, x: 0 }}
+            className="h-[350px] md:h-[450px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-white/10"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.40774233777!2d47.33230497526756!3d24.1507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e258f1234567891%3A0x1234567891234567!2sPi%20Cafe!5e0!3m2!1sen!2ssa!4v1714999999999!5m2!1sen!2ssa"
+              src={selectedBranch.mapUrl}
               width="100%"
               height="100%"
               style={{ border: 0 }}

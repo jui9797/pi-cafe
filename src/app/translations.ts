@@ -66,14 +66,51 @@ export const translations = {
       bestSeller: "Best Seller",
     },
     branch: {
-      title: "Our Location",
-      subtitle: "Visit us at our flagship branch in Al-Kharj.",
+      title: "Our Location's",
+      subtitle: "Find the nearest Pi Cafe and visit us today.",
       findNearest: "Find Nearest Branch",
       address: "Address",
       phone: "Phone",
       openingHours: "Opening Hours",
       allDay: "All Day",
-      locationName: "Pi Cafe - Al Andalus",
+      branches: [
+        {
+          id: "al-andalus",
+          name: "Al Andalus",
+          address: "4671 King Salman Bin Abdulaziz Rd, Al Andalus, Al-Kharj 16439, Saudi Arabia",
+          phone: "+966 50 519 6434",
+          openingHours: "Open 24 hours",
+          mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.9977159084665!2d47.344614299999996!3d24.155485700000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e254f70e85202c5%3A0x6724ad5fe3286286!2zUGkgY2FmZSB8IM-AIHwg2KjYp9mKINmD2KfZgdmK2Yc!5e1!3m2!1sen!2sbd!4v1778739049005!5m2!1sen!2sbd",
+          coords: { lat: 24.1554857, lng: 47.3446143 }
+        },
+        {
+          id: "al-akhdar",
+          name: "Al Akhdar",
+          address: "6181 King Abdulaziz Rd, Al-Akhdar, Al-Kharj 16281, Saudi Arabia",
+          phone: "+966 50 519 6434",
+          openingHours: "Open 24 hours",
+          mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.8586469796983!2d47.26840790000001!3d24.196994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e255b0027fe2731%3A0x4d372143933d21ee!2zUGkgY2FmZSB8INio2KfZiiDZg9in2YHZitmH!5e1!3m2!1sen!2sbd!4v1778738973046!5m2!1sen!2sbd",
+          coords: { lat: 24.196994, lng: 47.2684079 }
+        },
+        {
+          id: "ar-rashidiyah",
+          name: "Ar Rashidiyah",
+          address: "4501 Ad Dilam Rd, Ar Rashidiyah, Al-Kharj 16245, Saudi Arabia",
+          phone: "+966 50 519 6434",
+          openingHours: "Open 24 hours",
+          mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.392620315155!2d47.2407275!3d24.104563100000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2545494f6145d5%3A0x1365a6b11dcaa650!2zUGkgY2FmZSB8IM-AIHwg2KjYp9mKINmD2KfZgdmK2Yc!5e1!3m2!1sen!2sbd!4v1778739205104!5m2!1sen!2sbd",
+          coords: { lat: 24.1045631, lng: 47.2407275 }
+        },
+        {
+          id: "unnamed-road",
+          name: "Unnamed Road",
+          address: "Unnamed Road, Al-Kharj, Saudi Arabia",
+          phone: "+966 50 519 6434",
+          openingHours: "Open 24 hours",
+          mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.4174128271457!2d47.276182999999996!3d24.1401748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2545a29077585d%3A0xba0dcde7fc3336b2!2zUGkgY2FmZSB8IM-A!5e1!3m2!1sen!2sbd!4v1778739237795!5m2!1sen!2sbd",
+          coords: { lat: 24.1401748, lng: 47.276183 }
+        }
+      ]
     },
     about: {
       title: "Our Story",
@@ -174,14 +211,51 @@ export const translations = {
       bestSeller: "الأكثر مبيعاً",
     },
     branch: {
-      title: "موقعنا",
-      subtitle: "تفضل بزيارتنا في فرعنا الرئيسي بالخرج.",
+      title: "مواقعنا",
+      subtitle: "ابحث عن أقرب بي كافيه وقم بزيارتنا اليوم.",
       findNearest: "البحث عن أقرب فرع",
       address: "العنوان",
       phone: "الهاتف",
       openingHours: "ساعات العمل",
       allDay: "طوال اليوم",
-      locationName: "بي كافيه - الأندلس",
+      branches: [
+        {
+          id: "al-andalus",
+          name: "الأندلس",
+          address: "4671 طريق الملك سلمان بن عبدالعزيز، الأندلس، الخرج 16439، المملكة العربية السعودية",
+          phone: "+966 50 519 6434",
+          openingHours: "6:00 صباحاً - 1:00 صباحاً",
+          mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.9977159084665!2d47.344614299999996!3d24.155485700000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e254f70e85202c5%3A0x6724ad5fe3286286!2zUGkgY2FmZSB8IM-AIHwg2KjYp9mKINmD2KfZgdmK2Yc!5e1!3m2!1sen!2sbd!4v1778739049005!5m2!1sen!2sbd",
+          coords: { lat: 24.1554857, lng: 47.3446143 }
+        },
+        {
+          id: "al-akhdar",
+          name: "حي الأخضر",
+          address: "6181 طريق الملك عبدالعزيز، حي الأخضر، الخرج 16281، المملكة العربية السعودية",
+          phone: "+966 50 519 6434",
+          openingHours: "مفتوح 24 ساعة",
+          mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.8586469796983!2d47.26840790000001!3d24.196994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e255b0027fe2731%3A0x4d372143933d21ee!2zUGkgY2FmZSB8INio2KfZiiDZg9in2YHZitmH!5e1!3m2!1sen!2sbd!4v1778738973046!5m2!1sen!2sbd",
+          coords: { lat: 24.196994, lng: 47.2684079 }
+        },
+        {
+          id: "ar-rashidiyah",
+          name: "الراشدية",
+          address: "4501 طريق الدلم، الراشدية، الخرج 16245، المملكة العربية السعودية",
+          phone: "+966 50 519 6434",
+          openingHours: "مفتوح 24 ساعة",
+          mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.392620315155!2d47.2407275!3d24.104563100000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2545494f6145d5%3A0x1365a6b11dcaa650!2zUGkgY2FmZSB8IM-AIHwg2KjYp9mKINmD2KfZgdmK2Yc!5e1!3m2!1sen!2sbd!4v1778739205104!5m2!1sen!2sbd",
+          coords: { lat: 24.1045631, lng: 47.2407275 }
+        },
+        {
+          id: "unnamed-road",
+          name: "طريق غير مسمى",
+          address: "طريق غير مسمى، الخرج، المملكة العربية السعودية",
+          phone: "+966 50 519 6434",
+          openingHours: "مفتوح 24 ساعة",
+          mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.4174128271457!2d47.276182999999996!3d24.1401748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2545a29077585d%3A0xba0dcde7fc3336b2!2zUGkgY2FmZSB8IM-A!5e1!3m2!1sen!2sbd!4v1778739237795!5m2!1sen!2sbd",
+          coords: { lat: 24.1401748, lng: 47.276183 }
+        }
+      ]
     },
     about: {
       title: "قصتنا",

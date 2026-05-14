@@ -184,11 +184,11 @@ export default function CoffeeBeansSection() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-8">
           {displayedBeans.map((bean) => (
             <div
               key={bean.id}
-              className="bg-[#FFF8F0] dark:bg-[#2a1f1a] rounded-xl p-4 shadow-xl border border-[#C4A484]/30 flex flex-col transition-transform duration-300 hover:-translate-y-2 group"
+              className="bg-[#FFF8F0] dark:bg-[#2a1f1a] rounded-xl p-2 lg:p-4 shadow-xl border border-[#C4A484]/30 flex flex-col transition-transform duration-300 hover:-translate-y-2 group"
             >
               {/* Image */}
               {/* <div className="w-full h-40 mb-4 overflow-hidden rounded-xl bg-[#6F4E37]/5 flex items-center justify-center relative">
@@ -201,34 +201,25 @@ export default function CoffeeBeansSection() {
               </div> */}
 
               {/* Title */}
-              <div className="flex justify-between items-start mb-2">
-                <h3 className="text-lg font-[family-name:var(--font-playfair)] font-bold text-[#6F4E37] dark:text-[#C4A484] group-hover:text-[#FFB703] transition-colors">
+              <div className="flex justify-between items-start lg:mb-2">
+                <h3 className="text-[14px] lg:text-lg font-[family-name:var(--font-playfair)] font-bold text-[#6F4E37] dark:text-[#C4A484] group-hover:text-[#FFB703] transition-colors">
                   {bean.name}
                 </h3>
               </div>
 
               {/* Roast Badge */}
-              <div className="mb-2">
+              <div className=" lg:mb-2">
                 <RoastBadge level={bean.roastLevel} />
               </div>
 
               {/* Info */}
-              <div className="flex flex-col gap-3 flex-grow text-sm">
+              <div className="flex flex-col gap-1 lg:gap-3 flex-grow text-xs lg:text-sm">
                 <div>
                   <span className="font-semibold text-[#6F4E37]">
                     {t.origin}:{" "}
                   </span>
                   <span>{bean.origin}</span>
                 </div>
-
-                {bean.altitude && (
-                  <div>
-                    <span className="font-semibold text-[#6F4E37]">
-                      {t.altitude}:{" "}
-                    </span>
-                    <span>{bean.altitude}</span>
-                  </div>
-                )}
 
                 {bean.process && (
                   <div>
@@ -239,16 +230,11 @@ export default function CoffeeBeansSection() {
                   </div>
                 )}
 
-                <div>
-                  <span className="font-semibold text-[#6F4E37]">
-                    {t.recommended}:{" "}
-                  </span>
-                  <span>{bean.recommended}</span>
-                </div>
+                
               </div>
 
               {/* Description */}
-              <div className="mt-2 pt-2 border-t border-[#C4A484]/40">
+              <div className="mt-2 pt-2 border-t border-[#C4A484]/40 hidden lg:block">
                 <p className="text-gray-600 dark:text-gray-400 text-sm italic">
                   {bean.description}
                 </p>

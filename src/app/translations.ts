@@ -66,7 +66,7 @@ export const translations = {
       bestSeller: "Best Seller",
     },
     branch: {
-      title: "Our Location",
+      title: `Our Location's`,
       subtitle: "Visit us at our flagship branch in Al-Kharj.",
       findNearest: "Find Nearest Branch",
       address: "Address",
@@ -92,8 +92,7 @@ export const translations = {
       visionText:
         "To be the definitive benchmark for coffee excellence in Saudi Arabia, where every cup represents our commitment to infinite quality.",
       teamTitle: "Meet Our Master Baristas",
-      teamSubtitle: `With years of experience, we have built a strong reputation and customer trust. Our
-      friendly and professional team is dedicated to providing fast, welcoming, and highstandard service every day.`,
+      teamSubtitle: `With years of experience, we have built a strong reputation and customer trust.`,
     },
     contact: {
       title: "Get in Touch",

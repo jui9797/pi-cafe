@@ -66,8 +66,8 @@ export const translations = {
       bestSeller: "Best Seller",
     },
     branch: {
-      title: "Our Location's",
-      subtitle: "Find the nearest Pi Cafe and visit us today.",
+      title: "Our Location",
+      subtitle: "Visit us at our flagship branch in Al-Kharj.",
       findNearest: "Find Nearest Branch",
       address: "Address",
       phone: "Phone",
@@ -129,8 +129,7 @@ export const translations = {
       visionText:
         "To be the definitive benchmark for coffee excellence in Saudi Arabia, where every cup represents our commitment to infinite quality.",
       teamTitle: "Meet Our Master Baristas",
-      teamSubtitle: `With years of experience, we have built a strong reputation and customer trust. Our
-      friendly and professional team is dedicated to providing fast, welcoming, and highstandard service every day.`,
+      teamSubtitle: `With years of experience, we have built a strong reputation and customer trust.`,
     },
     contact: {
       title: "Get in Touch",

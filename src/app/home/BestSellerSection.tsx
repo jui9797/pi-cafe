@@ -38,7 +38,7 @@ const BestSellerSection = () => {
   ];
 
   return (
-    <section className="py-10 w-full px-4 md:px-8 bg-coffee-bg dark:bg-[#2a1f1a]">
+    <section className="my-10 lg:my-18 w-full px-4 md:px-8 bg-coffee-bg dark:bg-[#2a1f1a]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -47,7 +47,7 @@ const BestSellerSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <h2 className="text-3xl lg:text-4xl font-bold text-coffee-primary dark:text-coffee-secondary mb-2">
+          <h2 className="text-3xl lg:text-4xl font-[family-name:var(--font-playfair)] font-bold text-coffee-primary dark:text-coffee-secondary mb-2">
             {t.title}
           </h2>
           <p className="text-sm text-gray-600 dark:text-coffee-bg/80 max-w-2xl mx-auto">
@@ -55,7 +55,7 @@ const BestSellerSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {bestSellers.map((item, index) => (
             <motion.div
               key={item.id}
@@ -66,33 +66,33 @@ const BestSellerSection = () => {
               whileHover={{ y: -10 }}
               className="group relative bg-white/10 dark:bg-black/20 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 dark:border-white/10 shadow-xl"
             >
-              <div className="relative h-60 w-full overflow-hidden">
+              <div className="relative h-28 lg:h-60 w-full overflow-hidden p-1">
                 <Image
                   src={item.image}
                   alt={item.name}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute top-4 left-4 flex gap-2">
-                  <span className="flex items-center gap-1 bg-coffee-accent text-coffee-text px-3 py-1 rounded-full text-sm font-bold shadow-lg">
+                <div className="absolute lg:top-4 lg:left-4 flex gap-2">
+                  <span className="flex items-center gap-1 bg-coffee-accent text-coffee-text px-1 lg:px-3 py-1 rounded-full text-xs lg:text-sm font-bold shadow-lg">
                     {item.icon}
                     {item.badge}
                   </span>
                 </div>
               </div>
 
-              <div className="p-6">
-                <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-lg font-bold text-coffee-primary dark:text-coffee-secondary">
+              <div className="p-2 lg:p-6">
+                <div className="flex justify-between items-center mb-2 lg:mb-4">
+                  <h3 className="text-[12px] lg:text-[18px] font-bold text-coffee-primary dark:text-coffee-secondary">
                     {item.name}
                   </h3>
-                  <span className="text-lg font-bold text-coffee-accent">
+                  <span className="text-[10px] lg:text-lg font-semibold text-coffee-accent">
                     {item.price}
                   </span>
                 </div>
-                <button className="w-full py-3 bg-coffee-primary hover:bg-coffee-primary/90 text-white rounded-xl font-bold transition-all duration-300 shadow-lg active:scale-95">
+                {/* <button className="w-full py-3 bg-coffee-primary hover:bg-coffee-primary/90 text-white rounded-xl font-bold transition-all duration-300 shadow-lg active:scale-95">
                   {translations[lang].menu.addToCart}
-                </button>
+                </button> */}
               </div>
             </motion.div>
           ))}
